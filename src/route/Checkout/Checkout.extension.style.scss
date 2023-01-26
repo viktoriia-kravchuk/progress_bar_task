@@ -1,0 +1,89 @@
+.Checkout {
+  &::before {
+    display: none;
+  }
+}
+
+.ProgressBar {
+  background: var(--breadcrumbs-background);
+  min-height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0;
+  .label{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 6px 0;
+    width: 60px;
+    div {
+      height: 40px!important;
+      width: 40px!important;
+      border-radius: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        height: 15px;
+        width: 15px;
+      }
+      p {
+        margin: 10px 0;
+        line-height: 0;
+      }
+
+    }
+  }
+  .indicator {
+    height: 5px;
+    width: 100%;
+    margin-bottom: 35px;
+    flex: 1;
+    div {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+
+@keyframes fillIn {
+  0% {
+    width: 0;
+    opacity: 0.2;
+  }
+  100% {
+    width: 100% ;
+    opacity: 1;
+    background-color: $default-primary-base-color;
+  }
+}
+
+.primary {
+  div {
+    animation-name: fillIn;
+    animation-duration: 3s;
+    animation-fill-mode:forwards;
+    p {
+      color: $white;
+    }
+  }
+  p {
+    font-size: normal;
+    font-weight: 600;
+  }
+}
+
+.secondary {
+  div {
+    background-color: #dcdbdb;
+    p {
+      color: $default-secondary-dark-color;
+    }
+  }
+  p {
+    font-size: normal;
+    color: $default-secondary-dark-color;
+    font-family: $font-muli;
+  }
+}
